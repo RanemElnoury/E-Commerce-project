@@ -1,0 +1,22 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: $default-font;
+}
+a {
+    text-decoration: none !important;
+}
+button {
+    border: none;
+}
+.container{
+    width: 88% !important;
+}
+ul{
+    list-style: none;
+}
+html {
+    scroll-behavior: smooth;
+}
+

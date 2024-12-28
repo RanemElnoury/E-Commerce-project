@@ -1,0 +1,14 @@
+.cart {
+  margin-top: 2% !important;
+}
+.cart h2 {
+  font-size: 1.6rem;
+  font-weight: 600;
+}
+.cart .text-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 90vh;
+}

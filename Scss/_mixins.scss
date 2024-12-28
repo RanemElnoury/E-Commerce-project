@@ -1,0 +1,355 @@
+@mixin header-style {
+    .fixed-nav {
+        padding: 5px 0;
+        background-color: $navColor;
+        position: sticky;
+        top: 0;
+        z-index: 10;
+
+        .header-bottom {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            .header-categries {
+                position: relative;
+
+                .btn-group {
+                    position: relative;
+
+                    &:hover .dropdown-menu {
+                        display: block;
+                    }
+                }
+
+                .main {
+                    cursor: pointer;
+                    color: $seconderyTextColor;
+                    font-size: 22px;
+                    font-weight: 600;
+                    position: relative;
+                    transition: all .5s ease;
+                    &:hover {
+                        color: $seconderyColor;
+                    }
+                }
+
+                .dropdown-menu {
+                    display: none;
+                    position: absolute;
+                    top: 100%;
+                    left: 0;
+                    z-index: 1000;
+                    color: black;
+                    border: 1px solid #ddd;
+                    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+                    background-color: #fff;
+
+                    a {
+                        color: black;
+                        font-size: 0.8rem;
+                        &:hover {
+                            color: $seconderyColor;
+                        }
+                    }
+                }
+            }
+        }
+
+        .navbar-toggler {
+            color: $seconderyTextColor !important;
+            background-color: transparent;
+            span {
+                font-size: 1.2rem;
+                padding: 0 1px;
+                color: white !important; 
+                font-weight: 400;
+            }
+        }
+
+        nav .nav {
+            display: flex;
+            gap: 0 15px;
+            margin-left: auto; 
+            .nav-item.active a {
+                color:  $seconderyColor; 
+                font-weight: bold;
+            }
+            
+            li {
+                position: relative;
+
+                a {
+                    color: $seconderyTextColor;
+                    font-size: 0.8rem;
+                    font-weight: 400;
+                    position: relative;
+                    transition: all .5s ease;
+
+                    i {
+                        display: inline-block;
+                        transition: transform 0.5s ease;
+                    }
+
+                    &:hover {
+                        color: $seconderyColor;
+
+                        i {
+                            transform: rotate(180deg);
+                        }
+                    }
+                }
+                    &:hover {
+                        .dropdown-menu {
+                            display: block;
+                        }
+                    }
+                
+            }
+            @include dropdown;
+        }
+        .nav-item .nav-link{
+            padding: 3.5px 0;
+            
+        }
+    }
+
+
+    @media screen and (max-width: 500px) {
+        .navbar-toggler {
+            z-index: 500;
+        }
+
+        nav .nav {
+            display: none;
+        }
+    }
+}
+
+@mixin dropdown {
+    .dropdown-menu {
+        display: none;
+        background-color: #fff;
+        list-style: none;
+        margin-top: 2%;
+        color: black;
+        border: 1px solid #ddd;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        z-index: 1000;
+
+        li {
+            padding: 1px 0;
+
+            a {
+                color: black;
+                font-size: 0.8rem;
+
+                &:hover {
+                    color: $seconderyColor;
+                }
+            }
+        }
+    }
+}
+
+@mixin buttonStyle{
+    color:$seconderyTextColor;
+    font-size: 1rem;
+    font-weight: 600;
+    padding: 4px 8px;
+    border-radius: 5px;
+    background-color: $primaryColor;
+    margin-top: 10%;
+    transition: all .5s ease;
+    &:hover{
+        opacity: .7;
+    }
+}
+
+@mixin sale{
+    &::before {
+        content: "-25%"; 
+        position: absolute;
+        top: 22px; 
+        left: 10px; 
+        width: 25px; 
+        height: 25px; 
+        background-color: red; 
+        border-radius: 50%;
+        color: #fff;
+        font-size: .7rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 10; 
+    }
+}
+
+@mixin new{
+    &::before {
+        content: "New"; 
+        position: absolute;
+        top: 22px; 
+        left: 10px; 
+        width: 25px; 
+        height: 25px; 
+        background-color:$primaryColor; 
+        border-radius: 50%;
+        color: #fff;
+        font-size: .7rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 10; 
+    }
+}
+
+@mixin tabs-button{
+    button {
+        background-color: transparent;
+        border: none;
+        display: inline-block;
+        padding: 6px 30px;
+        font-size: 16px;
+        font-weight: 600;
+        opacity: 0.5;
+        transition: all 0.25s;
+
+        &:hover {
+            opacity: 1;
+            cursor: pointer;
+        }
+    }
+    button.active {
+        color: black;
+        border-bottom: 4px solid $primaryColor;
+        opacity: 1;
+    }
+}
+
+@mixin tab-content{
+    .items {
+        padding: 0 10px;
+        .item {
+            border-right: 1px solid rgba(180, 179, 179, 0.71);
+            border-left: 1px solid rgba(180, 179, 179, 0.71);
+            margin-bottom: 2%;
+            padding: 0;
+            transition: all .5s ease;
+            .item-img {
+                padding: 10px 0;
+             
+                margin-bottom: 3%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                position: relative;
+
+                img {
+                    width: 100px;
+                    height: 90px;
+                    object-fit: cover;
+                }
+                .heart {
+                    @include heart;
+                 }
+                 &:hover {
+                     .heart {
+                         visibility: visible;
+                     }
+                 }
+
+            }
+            .sale{
+                position: relative;
+                @include sale;
+            }
+            .new {
+                position: relative;
+                @include new;
+            }
+            .item-info {
+                text-align: center;
+                p {
+                    font-size: 0.9rem;
+                    font-weight: 500;
+                    line-height: 1;
+                    &:hover {
+                        color: $primaryColor;
+                        cursor: pointer;
+                    }
+                }
+
+                h6 {
+                    font-size: 0.9rem;
+                    font-weight: 500;
+                    line-height: 1;
+                }
+
+                span {
+                    margin-top: -10px !important;
+                    font-size: 0.9rem;
+                    line-height: 0.5; 
+                    color: #64686b;
+                }
+            }
+
+            .itembtn {
+                visibility: hidden;
+                background-color: $primaryColor;
+                text-align: center;
+                padding: 5px 5px;
+                border-radius: 0 0 7px 7px;
+                cursor: pointer;
+                transition: all .5s ease;
+
+                a {
+                    color: #fff !important;
+                    font-size: 0.9rem;
+                    font-weight: 500;
+                   
+
+                    &:hover {
+                        color: $seconderyColor;
+                    }
+                }
+            }
+
+            &:hover {
+                border-radius: 0 0 7px 7px;
+                box-shadow: 0 4px 8px rgba(100, 104, 107, 0.5);
+                .itembtn {
+                    visibility: visible;
+                }
+            }
+        }
+    }
+}
+
+@mixin heart {
+    position: absolute;
+                top: 23px;
+                right: 10px;
+                background-color: #d8d9daaf;
+                padding: 5px;
+                border-radius: 50%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                border: 1px solid #b6b8ba;
+                cursor: pointer;
+                visibility: hidden;
+                .fa-heart {
+                    color: #b6b8ba;
+                }
+                &:hover {
+                    background-color: #eee;
+                    box-shadow:
+                        0 4px 6px rgba(0, 0, 0, 0.2),
+                        0 1px 3px rgba(0, 0, 0, 0.1);
+                    i {
+                        color: red;
+                    }
+                }
+    
+}

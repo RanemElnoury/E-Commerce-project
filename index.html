@@ -1,0 +1,729 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="Scss/main.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Rubik:ital,wght@0,300..900;1,300..900&family=Sometype+Mono:ital,wght@0,400..700;1,400..700&family=Tajawal:wght@200;300;400;500;700;800;900&display=swap"
+        rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css">
+    <title>E-Commerce</title>
+</head>
+
+<body>
+    <!-- Start header -->
+    <header>
+        <div class="container">
+            <div class="header-top" id="top">
+                <div class="main-brand">
+                    <h1><a href="#">One Tech</a></h1>
+                </div>
+                <div class="header-search ">
+                    <input type="text" class="form-control inputSearch" aria-label="Text input with dropdown button"
+                        placeholder="Search">
+                    <select class="form-control cat-select" aria-label="Default select example">
+                        <option value="All Categories">All Categories</option>
+                        <option value="Computers">Computers</option>
+                        <option value="Labtops">Labtops</option>
+                        <option value="Cameras">Cameras</option>
+                        <option value="Hardware">Hardware</option>
+                        <option value="Smart Phones">Smart Phones</option>
+                    </select>
+                    <button class="btn btn-search " type="submit">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </button>
+                </div>
+                <div class="header-pages">
+                    <div class="page">
+                        <a href="wishing.html">
+                            <div class="page-img">
+                                <img src="images/heart.jpg" alt="heart Page">
+                                <div id="favorite-count">0</div>
+                            </div>
+                        </a>
+                        <div class="page-info">
+                            <h6>WishList</h6>
+                        </div>
+                    </div>
+                    <div class="page">
+                        <a href="cart.html">
+                            <div class="page-img">
+                                <img src="images/cart.jpg" alt="heart Page">
+                                <div id="card-count">0</div>
+                            </div>
+                        </a>
+                        <div class="page-info">
+                            <h6>Cart</h6>
+                            <span>0 $</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- end header -->
+
+    <!-- Start nav -->
+    <section class="navvv">
+        <div>
+            <div class=" fixed-nav navbar navbar-expand-lg ">
+                <div class="container header-bottom">
+                    <div class="header-categries col-lg-3">
+                        <div class="btn-group">
+                            <a class="main" aria-expanded="false">
+                                <i class="fa-solid fa-bars"></i>
+                                Categories
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#">Action</a></li>
+                                <li><a class="dropdown-item" href="#">Another action</a></li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li><a class="dropdown-item" href="#">Something else here</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span>Menu</span>
+                        <span> <i class="fa-solid fa-bars"></i></span>
+                    </button>
+                    <nav class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="nav navbar-nav">
+                            <li class="nav-item active"><a href="#home">Home</a></li>
+                            <li class="nav-item"><a href="#deals">Super Deals</a></li>
+                            <li class="nav-item"><a href="#arrival">New Arrival</a></li>
+                            <li class="nav-item"><a href="#trends">Trends</a></li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link " href="#" id="navbarDropdown" role="button"
+                                    data-bs-toggle="dropdown" aria-expanded="false">
+                                    Pages <i class="fa-solid fa-caret-down"></i>
+                                </a>
+                                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <li><a class="dropdown-item" href="cart.html">Cart</a></li>
+                                    <li><a class="dropdown-item" href="wishing.html">WishList</a></li>
+                                    <li><a class="dropdown-item" href="#">Something else here</a></li>
+                                </ul>
+                            </li>
+
+                            <li class="nav-item"><a href="#">Blog</a></li>
+                            <li class="nav-item"><a href="#contact">Contact</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End nav -->
+
+    <!-- Start home section -->
+    <section class="home" id="home">
+        <div class="container">
+            <div class="row">
+                <div class="homeInfo col-lg-5 col-md-5">
+                    <div class="info">
+                        <h2>NEW ERA OF SMARTPHONES</h2>
+                        <h4><span>$530</span> $460</h4>
+                        <p>Apple Iphone 6s</p>
+                        <a href="#">Shop Now</a>
+                    </div>
+                </div>
+                <div class="homeImg col-lg-7 col-md-7">
+                    <img src="images/main.jpg" alt="">
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- end home section -->
+
+    <!-- Start delivery section -->
+    <section class="delivery">
+        <div class="container">
+            <div class="row items">
+                <div class="item col-lg-2 my-2">
+                    <div class="icon ">
+                        <img src="images/track.jpg" alt="">
+                    </div>
+                    <div class="info ">
+                        <p>Free Delivery</p>
+                        <span>from $50</span>
+                    </div>
+                </div>
+                <div class="item col-lg-2 my-2">
+                    <div class="icon">
+                        <img src="images/return.jpg" alt="">
+                    </div>
+                    <div class="info">
+                        <p>Free Delivery</p>
+                        <span>from $50</span>
+                    </div>
+                </div>
+                <div class="item col-lg-2 my-2">
+                    <div class="icon">
+                        <img src="images/money.jpg" alt="">
+                    </div>
+                    <div class="info">
+                        <p>Free Delivery</p>
+                        <span>from $50</span>
+                    </div>
+                </div>
+                <div class="item col-lg-2 my-2">
+                    <div class="icon">
+                        <img src="images/free.jpg" alt="">
+                    </div>
+                    <div class="info">
+                        <p>Free Delivery</p>
+                        <span>from $50</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- end delivery section -->
+
+    <!-- Start deals section -->
+    <section class="deals" id="deals">
+        <div class="container">
+            <div class="row items">
+                <div class="left-item col-lg-4 col-md-4 my-2">
+                    <div class="top-item">
+                        <h4>Deals of the Week</h4>
+                        <div class="arrows">
+                            <a href="#dealsCarousel" role="button" data-bs-slide="prev">
+                                <i class="fa-sharp fa-solid fa-chevron-left"></i>
+                            </a>
+                            <a href="#dealsCarousel" role="button" data-bs-slide="next">
+                                <i class="fa-sharp fa-solid fa-chevron-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div id="dealsCarousel" class="carousel slide" data-bs-ride="carousel">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <div class="item-product">
+                                    <div class="item-img">
+                                        <img src="images/item.jpg" alt="headphone image" class="img-fluid">
+                                    </div>
+                                    <div class="item-category">
+                                        <span>HeadPhone</span>
+                                        <span>$300</span>
+                                    </div>
+                                    <div class="item-info">
+                                        <h4>Beoplay H7</h4>
+                                        <h4>$225</h4>
+                                    </div>
+                                    <div class="item-range">
+                                        <p>Available: <span>6</span></p>
+                                        <p>Already Sold: <span>28</span></p>
+                                    </div>
+                                    <div class="progress" role="progressbar">
+                                        <div class="progress-bar" style="width: 70%;"></div>
+                                    </div>
+                                    <div class="end-offer">
+                                        <div class="left">
+                                            <p>Hurry Up<br>
+                                                <span>Offer ends in:</span>
+                                            </p>
+                                        </div>
+                                        <div class="right">
+                                            <p>This Offer ends</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <div class="item-product">
+                                    <div class="item-img">
+                                        <img src="images/main.jpg" alt="phone image" class="img-fluid">
+                                    </div>
+                                    <div class="item-category">
+                                        <span>Phone</span>
+                                        <span>$400</span>
+                                    </div>
+                                    <div class="item-info">
+                                        <h4>Iphone 16</h4>
+                                        <h4>$300</h4>
+                                    </div>
+                                    <div class="item-range">
+                                        <p>Available: <span>10</span></p>
+                                        <p>Already Sold: <span>20</span></p>
+                                    </div>
+                                    <div class="progress" role="progressbar">
+                                        <div class="progress-bar" style="width: 70%;"></div>
+                                    </div>
+                                    <div class="end-offer">
+                                        <div class="left">
+                                            <p>Hurry Up<br>
+                                                <span>Offer ends in:</span>
+                                            </p>
+                                        </div>
+                                        <div class="right">
+                                            <p>This Offer ends</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <div class="item-product">
+                                    <div class="item-img">
+                                        <img src="images/computer.jpg" alt="laptop image" class="img-fluid">
+                                    </div>
+                                    <div class="item-category">
+                                        <span>Laptop</span>
+                                        <span>$500</span>
+                                    </div>
+                                    <div class="item-info">
+                                        <h4>Dell G3</h4>
+                                        <h4>$200</h4>
+                                    </div>
+                                    <div class="item-range">
+                                        <p>Available: <span>4</span></p>
+                                        <p>Already Sold: <span>20</span></p>
+                                    </div>
+                                    <div class="progress" role="progressbar">
+                                        <div class="progress-bar" style="width: 50%;"></div>
+                                    </div>
+                                    <div class="end-offer">
+                                        <div class="left">
+                                            <p>Hurry Up<br>
+                                                <span>Offer ends in:</span>
+                                            </p>
+                                        </div>
+                                        <div class="right">
+                                            <p>This Offer ends</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="right-item col-lg-8 col-md-6 my-2">
+                    <div class="tabs-items">
+                        <div class="tabs border-1 border-bottom">
+                            <button class="tab-btn active" data-filter="true">Featured</button>
+                            <button class="tab-btn" data-filter="false">On Sale</button>
+                            <button class="tab-btn" data-filter="falsee">Best Rated</button>
+
+                        </div>
+                    </div>
+                    <div class="tab-content">
+                        <div class="row items featured-products ">
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        </div>
+    </section>
+    <!-- end deals section -->
+
+    <!-- Start categories section -->
+    <section class="category">
+        <div class="container">
+            <div class="row items">
+                <div class="left-item col-lg-3 col-md-4 my-2">
+                    <h4>Popular Categories</h4>
+                    <a href="#">Full Categories</a>
+                </div>
+                <div class="right-item col-lg-9 col-md-6 my-2">
+                    <div class="items row">
+                        <div class="item col-lg-2 col-sm-6">
+                            <img src="images/mobile.jpg" alt="mobile">
+                            <p>Smartphones & Tablets</p>
+                        </div>
+                        <div class="item col-lg-2 col-sm-6">
+                            <img src="images/mobile.jpg" alt="mobile">
+                            <p>Smartphones & Tablets</p>
+                        </div>
+                        <div class="item col-lg-2 col-sm-6">
+                            <img src="images/mobile.jpg" alt="mobile">
+                            <p>Smartphones & Tablets</p>
+                        </div>
+                        <div class="item col-lg-2 col-sm-6">
+                            <img src="images/mobile.jpg" alt="mobile">
+                            <p>Smartphones & Tablets</p>
+                        </div>
+                        <div class="item col-lg-2 col-sm-6 ">
+                            <img src="images/mobile.jpg" alt="mobile">
+                            <p>Smartphones & Tablets</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- end categories section -->
+
+    <!-- Start ads section -->
+    <section class="ads-section">
+        <div class="container">
+            <div id="carouselExampleIndicators" class="carousel slide">
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0"
+                        class="active" aria-current="true" aria-label="Slide 1"></button>
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+                        aria-label="Slide 2"></button>
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
+                        aria-label="Slide 3"></button>
+                </div>
+                <div class="carousel-inner ">
+                    <div class="carousel-item active ">
+                        <div class="row">
+                            <div class="left-item col-lg-6 col-md-6">
+                                <span>Labtop</span>
+                                <h3>MacBook Air 13</h3>
+                                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Maxime, quidem. Praesentium
+                                    a distinctio provident natus.</p>
+                                <div class="stars">
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                </div>
+                                <a href="#">Explore</a>
+                            </div>
+                            <div class="right-item col-lg-6 col-md-6">
+                                <img src="images/computer.jpg" alt="">
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="carousel-item">
+                        <div class="row">
+                            <div class="left-item col-lg-6 col-md-6">
+                                <span>Labtop</span>
+                                <h3>MacBook Air 13</h3>
+                                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Maxime, quidem. Praesentium
+                                    a distinctio provident natus.</p>
+                                <div class="stars">
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                </div>
+                                <a href="#">Explore</a>
+                            </div>
+                            <div class="right-item col-lg-6 col-md-6">
+                                <img src="images/computer.jpg" alt="">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="row">
+                            <div class="left-item col-lg-6 col-md-6">
+                                <span>Labtop</span>
+                                <h3>MacBook Air 13</h3>
+                                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Maxime, quidem. Praesentium
+                                    a distinctio provident natus.</p>
+                                <div class="stars">
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                </div>
+                                <a href="#">Explore</a>
+                            </div>
+                            <div class="right-item col-lg-6 col-md-6">
+                                <img src="images/computer.jpg" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- end ads section -->
+
+    <!-- Start arrival section -->
+    <section class="arrival" id="arrival">
+        <div class="container">
+            <div class=" items">
+                <div class="right-item ">
+                    <div class="tabs-items">
+                        <div class="tabs  border-1 border-bottom">
+                            <div class="left-item  ">
+                                <h3>Hot New Arrival</h3>
+                            </div>
+                            <div class="right-item col-lg-8 col-md-6 ">
+                                <div class="tabs-items">
+                                    <div class="tabs border-1 border-bottom">
+                                        <button data-show="featured" class="active">Featured</button>
+                                        <button data-show="sale">Women's Fashion</button>
+                                        <button data-show="rated">Men's Fashion</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-9">
+                                <div class="tab-content">
+                                    <div class="row items featured-section">
+
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="last-item col-lg-3 ">
+                                <div class="item-img">
+                                    <img src="images/two-phones.jpg" alt="">
+                                </div>
+                                <div class="item-info">
+                                    <h6>$357</h6>
+                                    <span>IPad</span>
+                                    <p class="title">Huawei Media Pad</p>
+                                </div>
+                                <div class="stars">
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- end arrival section -->
+
+    <!-- Start trends section -->
+    <section class="trends" id="trends">
+        <div class="container">
+            <h2>Trends in 2021</h2>
+            <hr>
+            <div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner products" id="carouselProducts">
+                    <div class="carousel-item active">
+                    </div>
+                    <div class="carousel-item ">
+                    </div>
+                </div>
+
+                <!-- Controls -->
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample"
+                    data-bs-slide="prev">
+                    <span class="arrow" aria-hidden="true"><i class="fa-solid fa-chevron-left"></i></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExample"
+                    data-bs-slide="next">
+                    <span class="arrow" aria-hidden="true"><i class="fa-solid fa-chevron-right"></i></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+        </div>
+    </section>
+    <!-- end trends section -->
+
+    <!-- Start brands section -->
+    <section id="brands" class="brands py-5">
+        <div class="container">
+            <div class="brands-container">
+                <ul class="brands-flex">
+                    <li>
+                        <img src="./images/brand1.jpg" alt="" />
+                    </li>
+                    <li>
+                        <img src="./images/brand2.jpg" alt="" />
+                    </li>
+                    <li>
+                        <img src="./images/brand3.jpg" alt="" />
+                    </li>
+                    <li>
+                        <img src="./images/brand4.jpg" alt="" />
+                    </li>
+                    <li>
+                        <img src="./images/brand5.jpg" alt="" />
+                    </li>
+                    <li>
+                        <img src="./images/brand6.jpg" alt="" />
+                    </li>
+                    <li>
+                        <img src="./images/brand7.jpg" alt="" />
+                    </li>
+                    <li>
+                        <img src="./images/brand8.jpg" alt="" />
+                    </li>
+                    <li>
+                        <img src="./images/brand1.jpg" alt="" />
+                    </li>
+                    <li>
+                        <img src="./images/brand2.jpg" alt="" />
+                    </li>
+                    <li>
+                        <img src="./images/brand3.jpg" alt="" />
+                    </li>
+                    <li>
+                        <img src="./images/brand4.jpg" alt="" />
+                    </li>
+                    <li>
+                        <img src="./images/brand5.jpg" alt="" />
+                    </li>
+                    <li>
+                        <img src="./images/brand6.jpg" alt="" />
+                    </li>
+                    <li>
+                        <img src="./images/brand7.jpg" alt="" />
+                    </li>
+                    <li>
+                        <img src="./images/brand8.jpg" alt="" />
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    <!-- end brands section -->
+
+
+    <!-- start footer -->
+    <footer class="mt-4 pt-5">
+        <section id="contact">
+            <div class="container coupon py-4">
+                <div class="row justify-content-between g-4 align-items-start p-4">
+                    <div class="coupon-content d-flex align-items-center justify-content-center gap-4 col-12 col-lg-4">
+                        <div class="icon-send">
+                            <i class="fa-regular fa-paper-plane fa-3x"></i>
+                        </div>
+                        <div class="coupon-text">
+                            <h5>Sign up for Newsletter</h5>
+                            <p class="text-secondary">
+                                ...and receive %20 coupon for first shopping.
+                            </p>
+                        </div>
+                    </div>
+                    <form
+                        class="d-flex form-search flex-column align-items-center flex-sm-row col-12 col-lg-7 gap-3 gap-sm-0"
+                        role="search">
+                        <input class="form-control border-2 rounded-2 border" type="email"
+                            placeholder="Enter Your Email" />
+
+                        <button class="btn btn-search d-inline-block rounded-2 w-25 py-2" type="submit">
+                            Subscribe
+                        </button>
+                    </form>
+                </div>
+            </div>
+            <div class="container footer-links-box py-5">
+                <div class="row g-4">
+                    <div class="logo-footer-box d-flex flex-column gap-3 col-12 col-lg-4">
+                        <h2>OneTech</h2>
+                        <p>Got Question? Call Us 24/7</p>
+                        <a class="d-block text-main-color" href="https://wa.me/01020206038"
+                            class="d-block text-main-color fs-5">+20 010 2020 6038</a>
+                        <a href="mailto:Ranem.elnoury2003@gmail.com"
+                            class="d-block text-main-color fs-5">Ranem.elnoury2003@gmail.com</a>
+                        <p>Qalubia Banha Wahbi street</p>
+                        <div class="links d-flex gap-2">
+                            <a class="icon-link" href="https://www.facebook.com/rneem.M.elnoory?mibextid=ZbWKwL"><i
+                                    class="fa-brands fa-facebook-f"></i></a>
+                            <a class="icon-link"
+                                href="https://www.linkedin.com/in/ranem-elnoury-909489205?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"><i
+                                    class="fa-brands fa-linkedin"></i></a>
+                            <a class="icon-link" href="https://github.com/RanemElnoury"><i
+                                    class="fa-brands fa-github"></i></a>
+                            <a class="icon-link"
+                                href="https://www.instagram.com/ranemelnoury?igsh=MWxkZmF0a3A5dDJ5cA=="><i
+                                    class="fa-brands fa-instagram"></i></a>
+                        </div>
+                    </div>
+                    <div class="fast-links col-12 col-lg-4">
+                        <h6 class="mb-4">Find it Fast</h6>
+                        <ul class="p-0 d-flex flex-column gap-2">
+                            <li>
+                                <a href="" class="small text-secondary">Computers&Laptops</a>
+                            </li>
+                            <li>
+                                <a href="" class="small text-secondary">Computers&Laptops</a>
+                            </li>
+                            <li>
+                                <a href="" class="small text-secondary">Computers&Laptops</a>
+                            </li>
+                            <li>
+                                <a href="" class="small text-secondary">Computers&Laptops</a>
+                            </li>
+                            <li>
+                                <a href="" class="small text-secondary">Computers&Laptops</a>
+                            </li>
+                            <li>
+                                <a href="" class="small text-secondary">Computers&Laptops</a>
+                            </li>
+                            <li>
+                                <a href="" class="small text-secondary">Computers&Laptops</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="fast-links col-12 col-lg-4">
+                        <h6 class="mb-4">Customer Care</h6>
+                        <ul class="p-0 d-flex flex-column gap-2">
+                            <li>
+                                <a href="" class="small text-secondary">My Account</a>
+                            </li>
+                            <li>
+                                <a href="" class="small text-secondary">My Account</a>
+                            </li>
+                            <li>
+                                <a href="" class="small text-secondary">My Account</a>
+                            </li>
+                            <li>
+                                <a href="" class="small text-secondary">My Account</a>
+                            </li>
+                            <li>
+                                <a href="" class="small text-secondary">My Account</a>
+                            </li>
+                            <li>
+                                <a href="" class="small text-secondary">My Account</a>
+                            </li>
+                            <li>
+                                <a href="" class="small text-secondary">My Account</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div
+                class="copyright container py-4 d-flex justify-content-between align-items-center flex-column flex-md-row">
+                <p class="small text-secondary">
+                    Copyright ©2021 All rights reserved | This template is made by
+                    <span class="text-main-color">Triple-O</span>
+                </p>
+                <div class="imgs-logos d-flex gap-3 align-items-center me-md-5">
+                    <a href=""><img src="images/footer1.jpg" alt="" /></a>
+                    <a href=""><img src="images/footer2.jpg" alt="" /></a>
+                    <a href=""><img src="images/footer3.jpg" alt="" /></a>
+                    <a href=""><img src="images/footer4.jpg" alt="" /></a>
+                </div>
+            </div>
+        </section>
+    </footer>
+    <!-- end footer -->
+
+    <!-- arrow up -->
+    <div class="scroll-icon">
+        <a href="#top"><i class="fa-solid fa-arrow-up"></i></a>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
+    <script src="js/index.js"></script>
+    
+</body>
+
+</html>
