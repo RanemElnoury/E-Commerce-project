@@ -1,4 +1,3 @@
-@charset "UTF-8";
 body {
   font-size: 1rem;
   color: black;
@@ -96,11 +95,8 @@ header .header-top .header-pages .page .page-img div {
   color: #fff;
   display: flex;
   justify-content: center;
-  /* لجعل الرقم في المنتصف أفقيًا */
   align-items: center;
-  /* لجعل الرقم في المنتصف رأسيًا */
   font-size: 12px;
-  /* التحكم بحجم الرقم */
 }
 header .header-top .header-pages .page .page-info {
   line-height: 0.5;
@@ -183,7 +179,6 @@ header .header-top .header-pages .page .page-info h6 {
 }
 .navvv .fixed-nav nav .nav .nav-item.active a {
   color: #bbb;
-  /* لون العنصر النشط */
   font-weight: bold;
 }
 .navvv .fixed-nav nav .nav li {
@@ -228,6 +223,9 @@ header .header-top .header-pages .page .page-info h6 {
 }
 .navvv .fixed-nav nav .nav .dropdown-menu li a:hover {
   color: #bbb;
+}
+.navvv .fixed-nav .nav-item .nav-link {
+  padding: 3.5px 0;
 }
 @media screen and (max-width: 500px) {
   .navvv .navbar-toggler {
@@ -432,7 +430,7 @@ header .header-top .header-pages .page .page-info h6 {
   background-color: transparent;
   border: none;
   display: inline-block;
-  padding: 6px 16px;
+  padding: 6px 30px;
   font-size: 16px;
   font-weight: 600;
   opacity: 0.5;
@@ -454,9 +452,11 @@ header .header-top .header-pages .page .page-info h6 {
   padding: 0 10px;
 }
 .deals .right-item .tab-content .items .item {
-  border-right: 1px solid gray;
+  border-right: 1px solid rgba(180, 179, 179, 0.71);
+  border-left: 1px solid rgba(180, 179, 179, 0.71);
   margin-bottom: 2%;
   padding: 0;
+  transition: all 0.5s ease;
 }
 .deals .right-item .tab-content .items .item .item-img {
   padding: 10px 0;
@@ -467,13 +467,44 @@ header .header-top .header-pages .page .page-info h6 {
   position: relative;
 }
 .deals .right-item .tab-content .items .item .item-img img {
-  width: 50%;
+  width: 100px;
+  height: 90px;
   object-fit: cover;
 }
-.deals .right-item .tab-content .items .item .item-img::before {
+.deals .right-item .tab-content .items .item .item-img .heart {
+  position: absolute;
+  top: 23px;
+  right: 10px;
+  background-color: #d8d9daaf;
+  padding: 5px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #b6b8ba;
+  cursor: pointer;
+  visibility: hidden;
+}
+.deals .right-item .tab-content .items .item .item-img .heart .fa-heart {
+  color: #b6b8ba;
+}
+.deals .right-item .tab-content .items .item .item-img .heart:hover {
+  background-color: #eee;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2), 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+.deals .right-item .tab-content .items .item .item-img .heart:hover i {
+  color: red;
+}
+.deals .right-item .tab-content .items .item .item-img:hover .heart {
+  visibility: visible;
+}
+.deals .right-item .tab-content .items .item .sale {
+  position: relative;
+}
+.deals .right-item .tab-content .items .item .sale::before {
   content: "-25%";
   position: absolute;
-  top: 10px;
+  top: 22px;
   left: 10px;
   width: 25px;
   height: 25px;
@@ -486,10 +517,13 @@ header .header-top .header-pages .page .page-info h6 {
   align-items: center;
   z-index: 10;
 }
+.deals .right-item .tab-content .items .item .new {
+  position: relative;
+}
 .deals .right-item .tab-content .items .item .new::before {
   content: "New";
   position: absolute;
-  top: 10px;
+  top: 22px;
   left: 10px;
   width: 25px;
   height: 25px;
@@ -532,12 +566,12 @@ header .header-top .header-pages .page .page-info h6 {
   padding: 5px 5px;
   border-radius: 0 0 7px 7px;
   cursor: pointer;
+  transition: all 0.5s ease;
 }
 .deals .right-item .tab-content .items .item .itembtn a {
-  color: #fff;
+  color: #fff !important;
   font-size: 0.9rem;
   font-weight: 500;
-  transition: all 0.5s ease;
 }
 .deals .right-item .tab-content .items .item .itembtn a:hover {
   color: #bbb;
@@ -642,7 +676,7 @@ header .header-top .header-pages .page .page-info h6 {
   background-color: transparent;
   border: none;
   display: inline-block;
-  padding: 6px 16px;
+  padding: 6px 30px;
   font-size: 16px;
   font-weight: 600;
   opacity: 0.5;
@@ -664,9 +698,11 @@ header .header-top .header-pages .page .page-info h6 {
   padding: 0 10px;
 }
 .arrival .tab-content .items .item {
-  border-right: 1px solid gray;
+  border-right: 1px solid rgba(180, 179, 179, 0.71);
+  border-left: 1px solid rgba(180, 179, 179, 0.71);
   margin-bottom: 2%;
   padding: 0;
+  transition: all 0.5s ease;
 }
 .arrival .tab-content .items .item .item-img {
   padding: 10px 0;
@@ -677,13 +713,44 @@ header .header-top .header-pages .page .page-info h6 {
   position: relative;
 }
 .arrival .tab-content .items .item .item-img img {
-  width: 50%;
+  width: 100px;
+  height: 90px;
   object-fit: cover;
 }
-.arrival .tab-content .items .item .item-img::before {
+.arrival .tab-content .items .item .item-img .heart {
+  position: absolute;
+  top: 23px;
+  right: 10px;
+  background-color: #d8d9daaf;
+  padding: 5px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #b6b8ba;
+  cursor: pointer;
+  visibility: hidden;
+}
+.arrival .tab-content .items .item .item-img .heart .fa-heart {
+  color: #b6b8ba;
+}
+.arrival .tab-content .items .item .item-img .heart:hover {
+  background-color: #eee;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2), 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+.arrival .tab-content .items .item .item-img .heart:hover i {
+  color: red;
+}
+.arrival .tab-content .items .item .item-img:hover .heart {
+  visibility: visible;
+}
+.arrival .tab-content .items .item .sale {
+  position: relative;
+}
+.arrival .tab-content .items .item .sale::before {
   content: "-25%";
   position: absolute;
-  top: 10px;
+  top: 22px;
   left: 10px;
   width: 25px;
   height: 25px;
@@ -696,10 +763,13 @@ header .header-top .header-pages .page .page-info h6 {
   align-items: center;
   z-index: 10;
 }
+.arrival .tab-content .items .item .new {
+  position: relative;
+}
 .arrival .tab-content .items .item .new::before {
   content: "New";
   position: absolute;
-  top: 10px;
+  top: 22px;
   left: 10px;
   width: 25px;
   height: 25px;
@@ -742,12 +812,12 @@ header .header-top .header-pages .page .page-info h6 {
   padding: 5px 5px;
   border-radius: 0 0 7px 7px;
   cursor: pointer;
+  transition: all 0.5s ease;
 }
 .arrival .tab-content .items .item .itembtn a {
-  color: #fff;
+  color: #fff !important;
   font-size: 0.9rem;
   font-weight: 500;
-  transition: all 0.5s ease;
 }
 .arrival .tab-content .items .item .itembtn a:hover {
   color: #bbb;
@@ -778,7 +848,7 @@ header .header-top .header-pages .page .page-info h6 {
 .arrival .last-item .item-img::before {
   content: "-25%";
   position: absolute;
-  top: 10px;
+  top: 22px;
   left: 10px;
   width: 25px;
   height: 25px;
@@ -895,7 +965,7 @@ header .header-top .header-pages .page .page-info h6 {
 }
 .trends .products .product .product-info .text p {
   line-height: 0.5;
-  font-size: 1rem;
+  font-size: 0.9rem;
   font-weight: 500;
 }
 .trends .products .product .heart {
@@ -1086,19 +1156,34 @@ footer .imgs-logos img {
   }
 }
 .wishlist {
-  margin-top: 5%;
+  margin-top: 2% !important;
 }
-.wishlist h2 {
+
+.cart h2 {
   font-size: 1.6rem;
   font-weight: 600;
 }
+.cart .text-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 90vh;
+}
 
 .cart {
-  margin-top: 5%;
+  margin-top: 2% !important;
 }
 .cart h2 {
   font-size: 1.6rem;
   font-weight: 600;
+}
+.cart .text-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 90vh;
 }
 
 * {
