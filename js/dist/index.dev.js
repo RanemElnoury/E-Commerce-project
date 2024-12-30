@@ -261,6 +261,7 @@ function toggleCart(element) {
 
   localStorage.setItem('cardProducts', JSON.stringify(savedProducts));
   updateCartCount();
+  updateTotalPrice();
 }
 
 function updateCartCount() {
@@ -300,9 +301,23 @@ function handleCartButtonClick(event) {
   toggleCart(addBtn);
 }
 
+function updateTotalPrice() {
+  var totalPriceElement = document.querySelector("#totalPrice");
+  var savedProducts = JSON.parse(localStorage.getItem('cardProducts')) || [];
+  var totalPrice = 0;
+  savedProducts.forEach(function (product) {
+    totalPrice += product.price * product.count;
+  });
+
+  if (totalPriceElement) {
+    totalPriceElement.textContent = "".concat(totalPrice.toFixed(2), " $");
+  }
+}
+
 document.addEventListener('DOMContentLoaded', function () {
   updateCartCount();
   initializeCartButtons();
+  updateTotalPrice();
 }); //get data for trends
 
 function fetchProducts() {

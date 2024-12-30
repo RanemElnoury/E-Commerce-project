@@ -12,3 +12,6 @@
   flex-direction: column;
   height: 90vh;
 }
+.cart .text-secondary {
+  font-size: 1rem !important;
+}

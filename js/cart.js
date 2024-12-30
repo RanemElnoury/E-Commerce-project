@@ -5,7 +5,6 @@ function getEmptyWishlistHTML() {
     return `
         <div class="text-center">
             <img src="images/Shopping-Cart.png" class="heartimage" alt="clearWishing" style="width:40%">
-           
         </div>
     `;
 }
@@ -14,21 +13,20 @@ function getProductHTML(product) {
     const totalPrice = (product.price * product.count).toFixed(2); 
     return `
         <li class="row justify-content-between align-items-center border-bottom py-3">
-            <div class="col-4">
-                <img src="${product.image}" alt="${product.name}" class="img-fluid rounded me-2" style="width: 50px;">
-                <span>${product.name}</span>
-            </div>
-            <div class="col-3 text-secondary">$${product.price}</div>
-            <div class="col-2">
-                <button class="btn btn-sm" onclick="updateQuantity('${product.id}', -1)">-</button>
-                <span>${product.count}</span>
-                <button class="btn btn-sm" onclick="updateQuantity('${product.id}', 1)">+</button>
-            </div>
-             <div class="col-1">
-                <button class="btn btn-danger btn-sm remove-btn" data-id="${product.id}"><i class="fa-solid fa-trash"></i></button>
-            </div>
-            <div class="col-2 text-secondary">$${totalPrice}</div>
-           
+        <div class="col-9 col-md-4">
+            <img src="${product.image}" alt="${product.name}" class="img-fluid rounded me-2" style="width: 50px;">
+            <span>${product.name.split(" ", 2).join(" ")}</span>
+        </div>
+        <div class="col-3 col-md-3 text-secondary">$${product.price}</div>
+        <div class="col-4 col-md-2">
+            <button class="btn btn-sm" onclick="updateQuantity('${product.id}', -1)">-</button>
+            <span>${product.count}</span>
+            <button class="btn btn-sm" onclick="updateQuantity('${product.id}', 1)">+</button>
+        </div>
+        <div class="col-4 col-md-1">
+            <button class="btn btn-danger btn-sm remove-btn" data-id="${product.id}"><i class="fa-solid fa-trash"></i></button>
+        </div>
+        <div class="col-4 col-md-2 text-secondary">$${totalPrice}</div>
         </li>
     `;
 }
@@ -47,9 +45,7 @@ function renderWishlist() {
 
     payNow.disabled = false; 
     wishlistContainer.innerHTML = favoriteProducts.map(product => getProductHTML(product)).join('');
-
     attachRemoveListeners();
-    attachAddToCartListeners();
 }
 
 function updateQuantity(productId, change) {
@@ -77,8 +73,6 @@ function attachRemoveListeners() {
     });
 }
 
-function attachAddToCartListeners() {
-}
 
 function removeFromWishlist(productId) {
     let savedProducts = JSON.parse(localStorage.getItem('cardProducts')) || [];

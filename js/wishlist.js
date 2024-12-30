@@ -32,7 +32,7 @@ function getProductHTML(product) {
         <li class="row justify-content-between align-items-center border-bottom py-3">
             <div class="col-4">
                 <img src="${product.image}" alt="${product.name}" class="img-fluid rounded me-2" style="width: 50px;">
-                <span>${product.name}</span>
+                <span>${product.name.split(" ", 2).join(" ")}</span>
             </div>
             <div class="col-3 text-secondary">$${product.price}</div>
             <div class="col-2">
@@ -41,6 +41,15 @@ function getProductHTML(product) {
             </div>
         </li>
     `;
+}
+
+function attachRemoveListeners() {
+    document.querySelectorAll(".remove-btn").forEach(button => {
+        button.addEventListener("click", () => {
+            const productId = button.getAttribute("data-id");
+            removeFromWishlist(productId);
+        });
+    });
 }
 
 function removeFromWishlist(productId) {
@@ -55,15 +64,6 @@ function removeFromWishlist(productId) {
         wishlistContainer.innerHTML = getEmptyWishlistHTML();
         clearBtn.disabled = true;
     }
-}
-
-function attachRemoveListeners() {
-    document.querySelectorAll(".remove-btn").forEach(button => {
-        button.addEventListener("click", () => {
-            const productId = button.getAttribute("data-id");
-            removeFromWishlist(productId);
-        });
-    });
 }
 
 function attachAddToCartListeners() {

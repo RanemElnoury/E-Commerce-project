@@ -227,7 +227,6 @@ function toggleCart(element) {
         console.error("Product element not found!");
         return;
     }
-
     const addBtn = productElement.querySelector(".itembtn a");
     const productId = productElement.getAttribute('data-id');
     const productName = productElement.getAttribute('data-name');
@@ -259,6 +258,7 @@ function toggleCart(element) {
 
     localStorage.setItem('cardProducts', JSON.stringify(savedProducts));
     updateCartCount();
+    updateTotalPrice();
 }
 
 function updateCartCount() {
@@ -296,9 +296,22 @@ function handleCartButtonClick(event) {
     toggleCart(addBtn);
 }
 
+function updateTotalPrice() {
+    const totalPriceElement = document.querySelector("#totalPrice");
+    const savedProducts = JSON.parse(localStorage.getItem('cardProducts')) || [];
+
+    let totalPrice = 0; 
+    savedProducts.forEach(product => {
+        totalPrice += product.price * product.count; 
+    });
+    if (totalPriceElement) {
+        totalPriceElement.textContent = `${totalPrice.toFixed(2)} $`; 
+}
+}
 document.addEventListener('DOMContentLoaded', function () {
     updateCartCount();
     initializeCartButtons();
+    updateTotalPrice();
 });
 
 

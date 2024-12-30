@@ -1131,7 +1131,6 @@ footer .imgs-logos img {
 @media (max-width: 768px) {
   .header-top {
     flex-direction: column;
-    align-items: flex-start;
   }
   .header-search {
     width: 100%;
@@ -1185,6 +1184,9 @@ footer .imgs-logos img {
   align-items: center;
   flex-direction: column;
   height: 90vh;
+}
+.cart .text-secondary {
+  font-size: 1rem !important;
 }
 
 * {

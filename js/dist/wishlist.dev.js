@@ -25,7 +25,16 @@ function getEmptyWishlistHTML() {
 }
 
 function getProductHTML(product) {
-  return "\n        <li class=\"row justify-content-between align-items-center border-bottom py-3\">\n            <div class=\"col-4\">\n                <img src=\"".concat(product.image, "\" alt=\"").concat(product.name, "\" class=\"img-fluid rounded me-2\" style=\"width: 50px;\">\n                <span>").concat(product.name, "</span>\n            </div>\n            <div class=\"col-3 text-secondary\">$").concat(product.price, "</div>\n            <div class=\"col-2\">\n                <button class=\"btn btn-danger btn-sm remove-btn\" data-id=\"").concat(product.id, "\"><i class=\"fa-solid fa-heart-broken\"></i></button>\n                <button class=\"btn btn-primary btn-sm add-to-cart-btn\" data-id=\"").concat(product.id, "\"><i class=\"fa-solid fa-cart-shopping\"></i></button>\n            </div>\n        </li>\n    ");
+  return "\n        <li class=\"row justify-content-between align-items-center border-bottom py-3\">\n            <div class=\"col-4\">\n                <img src=\"".concat(product.image, "\" alt=\"").concat(product.name, "\" class=\"img-fluid rounded me-2\" style=\"width: 50px;\">\n                <span>").concat(product.name.split(" ", 2).join(" "), "</span>\n            </div>\n            <div class=\"col-3 text-secondary\">$").concat(product.price, "</div>\n            <div class=\"col-2\">\n                <button class=\"btn btn-danger btn-sm remove-btn\" data-id=\"").concat(product.id, "\"><i class=\"fa-solid fa-heart-broken\"></i></button>\n                <button class=\"btn btn-primary btn-sm add-to-cart-btn\" data-id=\"").concat(product.id, "\"><i class=\"fa-solid fa-cart-shopping\"></i></button>\n            </div>\n        </li>\n    ");
+}
+
+function attachRemoveListeners() {
+  document.querySelectorAll(".remove-btn").forEach(function (button) {
+    button.addEventListener("click", function () {
+      var productId = button.getAttribute("data-id");
+      removeFromWishlist(productId);
+    });
+  });
 }
 
 function removeFromWishlist(productId) {
@@ -41,15 +50,6 @@ function removeFromWishlist(productId) {
     wishlistContainer.innerHTML = getEmptyWishlistHTML();
     clearBtn.disabled = true;
   }
-}
-
-function attachRemoveListeners() {
-  document.querySelectorAll(".remove-btn").forEach(function (button) {
-    button.addEventListener("click", function () {
-      var productId = button.getAttribute("data-id");
-      removeFromWishlist(productId);
-    });
-  });
 }
 
 function attachAddToCartListeners() {
